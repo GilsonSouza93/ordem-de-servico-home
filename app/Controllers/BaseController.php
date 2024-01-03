@@ -84,131 +84,132 @@ abstract class BaseController extends Controller
                 'show_subitems' => false,
             ],
 
-            'financial' => [
-                'title' => 'Financeiro',
-                'href' => base_url('financeiro'),
-                'icon' => '<i class="fas fa-tools"></i>',
-                'show_subitems' => true,
-                'color' => '#3e444a',
-                'subitems' => [
-                    'dashboard' => [
-                        'title' => 'Dashboard',
-                        'href' => base_url('financeiro/dashboard'),
-                    ],
-                    'caixa' => [
-                        'title' => 'Caixa',
-                        'href' => base_url('financeiro/caixa'),
-                    ],
-                    'payable' => [
-                        'title' => 'Contas a Pagar',
-                        'href' => base_url('financeiro/contas-pagar'),
-                    ],
-                    'receive' => [
-                        'title' => 'Contas a Receber',
-                        'href' => base_url('financeiro/contas-receber'),
-                    ],
-                    'ticket' => [
-                        'title' => 'Boletos',
-                        'href' => base_url('financeiro/boleto'),
-                    ],
-                    'contract' => [
-                        'title' => 'Contratos',
-                        'href' => base_url('financeiro/contratos'),
-                    ],
-                    'paymentpoint' => [
-                        'title' => 'Ponto de Pagamento',
-                        'href' => base_url('financeiro/pontosdepagamento'),
-                    ],
-                    'paymentplans' => [
-                        'title' => 'Planos de Pagamento',
-                        'href' => base_url('financeiro/planosdepagamento'),
-                    ],
+            // 'financial' => [
+            //     'title' => 'Financeiro',
+            //     'href' => base_url('financeiro'),
+            //     'icon' => '<i class="fas fa-tools"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#3e444a',
+            //     'subitems' => [
+            //         'dashboard' => [
+            //             'title' => 'Dashboard',
+            //             'href' => base_url('financeiro/dashboard'),
+            //         ],
+            //         'caixa' => [
+            //             'title' => 'Caixa',
+            //             'href' => base_url('financeiro/caixa'),
+            //         ],
+            //         'payable' => [
+            //             'title' => 'Contas a Pagar',
+            //             'href' => base_url('financeiro/contas-pagar'),
+            //         ],
+            //         'receive' => [
+            //             'title' => 'Contas a Receber',
+            //             'href' => base_url('financeiro/contas-receber'),
+            //         ],
+            //         'ticket' => [
+            //             'title' => 'Boletos',
+            //             'href' => base_url('financeiro/boleto'),
+            //         ],
+            //         'contract' => [
+            //             'title' => 'Contratos',
+            //             'href' => base_url('financeiro/contratos'),
+            //         ],
+            //         'paymentpoint' => [
+            //             'title' => 'Ponto de Pagamento',
+            //             'href' => base_url('financeiro/pontosdepagamento'),
+            //         ],
+            //         'paymentplans' => [
+            //             'title' => 'Planos de Pagamento',
+            //             'href' => base_url('financeiro/planosdepagamento'),
+            //         ],
 
-                ]
+            //     ]
 
-            ],
-            'gerencial' => [
-                'title' => 'Gerencial',
-                'href' => base_url('gerencial'),
-                'icon' => '<i class="fas fa-tools"></i>',
-                'show_subitems' => true,
-                'color' => '#3e444a',
-                'subitems' => [
-                    'pop' => [
-                        'title' => 'POP',
-                        'href' => base_url('gerencial/pop'),
-                    ],
-                    'email' => [
-                        'title' => 'Email',
-                        'href' => base_url('gerencial/email'),
-                    ],
-                    'sms' => [
-                        'title' => 'SMS',
-                        'href' => base_url('gerencial/sms'),
-                    ],
-                    'vehicle' => [
-                        'title' => 'Veículos',
-                        'href' => base_url('gerencial/veiculos'),
-                    ],
-                ]
+            // ],
 
-            ],
-            'equipment' => [
-                'title' => 'Equipamentos',
-                'href' => base_url('equipamentos'),
-                'icon' => '<i class="fas fa-tools"></i>',
-                'show_subitems' => true,
-                'color' => '#3e444a',
-                'subitems' => [
-                    'olt' => [
-                        'title' => 'OLTs',
-                        'href' => base_url('equipamentos/olt'),
-                        'icon' => '<i class="fas fa-server"></i>'
-                    ],
-                    'onu' => [
-                        'title' => 'ONUs',
-                        'href' => base_url('equipamentos/onu'),
-                        'icon' => '<i class="fas fa-microchip"></i>'
-                    ],
-                    'switch' => [
-                        'title' => 'Switches',
-                        'href' => base_url('equipamentos/switch'),
-                        'icon' => '<i class="fas fa-network-wired"></i>'
-                    ],
-                    'router' => [
-                        'title' => 'Roteadores',
-                        'href' => base_url('equipamentos/router'),
-                        'icon' => '<i class="fas fa-network-wired"></i>'
-                    ],
-                    'radius' => [
-                        'title' => 'Radius',
-                        'href' => base_url('equipamentos/radius'),
-                        'icon' => '<i class="fas fa-network-wired"></i>'
+            // 'gerencial' => [
+            //     'title' => 'Gerencial',
+            //     'href' => base_url('gerencial'),
+            //     'icon' => '<i class="fas fa-tools"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#3e444a',
+            //     'subitems' => [
+            //         'pop' => [
+            //             'title' => 'POP',
+            //             'href' => base_url('gerencial/pop'),
+            //         ],
+            //         'email' => [
+            //             'title' => 'Email',
+            //             'href' => base_url('gerencial/email'),
+            //         ],
+            //         'sms' => [
+            //             'title' => 'SMS',
+            //             'href' => base_url('gerencial/sms'),
+            //         ],
+            //         'vehicle' => [
+            //             'title' => 'Veículos',
+            //             'href' => base_url('gerencial/veiculos'),
+            //         ],
+            //     ]
 
-                    ],
-                    'nas' => [
-                        'title' => 'NAS',
-                        'href' => base_url('equipamentos/nas'),
-                        'icon' => '<i class="fas fa-network-wired"></i>'
+            // ],
+            // 'equipment' => [
+            //     'title' => 'Equipamentos',
+            //     'href' => base_url('equipamentos'),
+            //     'icon' => '<i class="fas fa-tools"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#3e444a',
+            //     'subitems' => [
+            //         'olt' => [
+            //             'title' => 'OLTs',
+            //             'href' => base_url('equipamentos/olt'),
+            //             'icon' => '<i class="fas fa-server"></i>'
+            //         ],
+            //         'onu' => [
+            //             'title' => 'ONUs',
+            //             'href' => base_url('equipamentos/onu'),
+            //             'icon' => '<i class="fas fa-microchip"></i>'
+            //         ],
+            //         'switch' => [
+            //             'title' => 'Switches',
+            //             'href' => base_url('equipamentos/switch'),
+            //             'icon' => '<i class="fas fa-network-wired"></i>'
+            //         ],
+            //         'router' => [
+            //             'title' => 'Roteadores',
+            //             'href' => base_url('equipamentos/router'),
+            //             'icon' => '<i class="fas fa-network-wired"></i>'
+            //         ],
+            //         'radius' => [
+            //             'title' => 'Radius',
+            //             'href' => base_url('equipamentos/radius'),
+            //             'icon' => '<i class="fas fa-network-wired"></i>'
 
-                    ],
-                    'poste' => [
-                        'title' => 'Poste',
-                        'href' => base_url('equipamentos/poste'),
-                        'icon' => '<i class="fas fa-wifi"></i>'
-                    ],
-                    'tower' => [
-                        'title' => 'Torre',
-                        'href' => base_url('equipamentos/tower'),
-                        'icon' => '<i class="fas fa-wifi"></i>'
-                    ],
-                    'servidor' => [
-                        'title' => 'Servidores',
-                        'href' => base_url('equipamentos/servidor'),
-                        'icon' => '<i class="fas fa-server"></i>'
-                    ]
-                ]
-            ],
+            //         ],
+            //         'nas' => [
+            //             'title' => 'NAS',
+            //             'href' => base_url('equipamentos/nas'),
+            //             'icon' => '<i class="fas fa-network-wired"></i>'
+
+            //         ],
+            //         'poste' => [
+            //             'title' => 'Poste',
+            //             'href' => base_url('equipamentos/poste'),
+            //             'icon' => '<i class="fas fa-wifi"></i>'
+            //         ],
+            //         'tower' => [
+            //             'title' => 'Torre',
+            //             'href' => base_url('equipamentos/tower'),
+            //             'icon' => '<i class="fas fa-wifi"></i>'
+            //         ],
+            //         'servidor' => [
+            //             'title' => 'Servidores',
+            //             'href' => base_url('equipamentos/servidor'),
+            //             'icon' => '<i class="fas fa-server"></i>'
+            //         ]
+            //     ]
+            // ],
 
             'Estoque' => [
                 'title' => 'Estoque',
@@ -249,34 +250,34 @@ abstract class BaseController extends Controller
                 ]
             ],
 
-            'Monitoramento' => [
-                'title' => 'Monitoramento',
-                'href' => base_url('monitoramento'),
-                'icon' => '<i class="fas fa-boxes"></i>',
-                'show_subitems' => true,
-                'color' => '#3e444a',
-                'subitems' => [
-                    'Mapa' => [
-                        'title' => 'Mapa',
-                        'href' => base_url('monitoramento/mapa')
-                    ],
+            // 'Monitoramento' => [
+            //     'title' => 'Monitoramento',
+            //     'href' => base_url('monitoramento'),
+            //     'icon' => '<i class="fas fa-boxes"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#3e444a',
+            //     'subitems' => [
+            //         'Mapa' => [
+            //             'title' => 'Mapa',
+            //             'href' => base_url('monitoramento/mapa')
+            //         ],
 
-                    'Clientes' => [
-                        'title' => 'Clientes',
-                        'href' => base_url('monitoramento/clientes')
-                    ],
+            //         'Clientes' => [
+            //             'title' => 'Clientes',
+            //             'href' => base_url('monitoramento/clientes')
+            //         ],
 
-                    'Equipamentos' => [
-                        'title' => 'Equipamentos',
-                        'href' => base_url('monitoramento/equipamentos')
-                    ],
+            //         'Equipamentos' => [
+            //             'title' => 'Equipamentos',
+            //             'href' => base_url('monitoramento/equipamentos')
+            //         ],
 
-                    'Rede' => [
-                        'title' => 'Rede',
-                        'href' => base_url('monitoramento/rede')
-                    ],
-                ]
-            ],
+            //         'Rede' => [
+            //             'title' => 'Rede',
+            //             'href' => base_url('monitoramento/rede')
+            //         ],
+            //     ]
+            // ],
 
             'settings' => [
                 'title' => 'Configurações',
@@ -293,26 +294,26 @@ abstract class BaseController extends Controller
                         'title' => 'Grupos de Permissão',
                         'href' => base_url('configuracoes/grupo-permissao'),
                     ],
-                    'Planos' => [
-                        'title' => 'Planos',
-                        'href' => base_url('configuracoes/planos'),
-                    ],
-                    'Ip Pool' => [
-                        'title' => 'IP POOL',
-                        'href' => base_url('configuracoes/ippool'),
-                    ],
-                    'Ipv6 Pool' => [
-                        'title' => 'IPv6 POOL',
-                        'href' => base_url('configuracoes/ipv6pool'),
-                    ],
-                    'Central do Assinante' => [
-                        'title' => 'Central do Assinante',
-                        'href' => base_url('configuracoes/centraldoassinante'),
-                    ],
-                    'Integrações' => [
-                        'title' => 'Integrações',
-                        'href' => base_url('configuracoes/integracoes'),
-                    ],
+                    // 'Planos' => [
+                    //     'title' => 'Planos',
+                    //     'href' => base_url('configuracoes/planos'),
+                    // ],
+                    // 'Ip Pool' => [
+                    //     'title' => 'IP POOL',
+                    //     'href' => base_url('configuracoes/ippool'),
+                    // ],
+                    // 'Ipv6 Pool' => [
+                    //     'title' => 'IPv6 POOL',
+                    //     'href' => base_url('configuracoes/ipv6pool'),
+                    // ],
+                    // 'Central do Assinante' => [
+                    //     'title' => 'Central do Assinante',
+                    //     'href' => base_url('configuracoes/centraldoassinante'),
+                    // ],
+                    // 'Integrações' => [
+                    //     'title' => 'Integrações',
+                    //     'href' => base_url('configuracoes/integracoes'),
+                    // ],
                     'Alterar Senha' => [
                         'title' => 'Alterar Senha',
                         'href' => base_url('configuracoes/alterarsenha'),
@@ -326,10 +327,10 @@ abstract class BaseController extends Controller
                 'show_subitems' => true,
                 'color' => '#3e444a',
                 'subitems' => [
-                    'routerboard' => [
-                        'title' => 'Routerboard',
-                        'href' => base_url('suporte/routerboard'),
-                    ],
+                    // 'routerboard' => [
+                    //     'title' => 'Routerboard',
+                    //     'href' => base_url('suporte/routerboard'),
+                    // ],
                     'order_service' => [
                         'title' => 'Ordem de Serviço',
                         'href' => base_url('suporte/ordem-de-servico'),
