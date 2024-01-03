@@ -26,7 +26,7 @@ class Email extends BaseConfig
     public string $mailPath = '/usr/sbin/sendmail';
 
     /**
-     * SMTP Server Hostname
+     * SMTP Server Address
      */
     public string $SMTPHost = '';
 
@@ -56,11 +56,7 @@ class Email extends BaseConfig
     public bool $SMTPKeepAlive = false;
 
     /**
-     * SMTP Encryption.
-     *
-     * @var string '', 'tls' or 'ssl'. 'tls' will issue a STARTTLS command
-     *             to the server. 'ssl' means implicit SSL. Connection on port
-     *             465 should set this to ''.
+     * SMTP Encryption. Either tls or ssl
      */
     public string $SMTPCrypto = 'tls';
 
