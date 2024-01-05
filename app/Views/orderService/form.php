@@ -20,20 +20,27 @@
 
     <form id="form">
         <input type="hidden" name="id" id="id" value="<?= isset($register) ? $register->id : '' ?>">
-
+        <h4>
+            Dados do Cliente
+        </h4>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">Contrato</label>
+                <label for="uf" class="form-label">Nome do Cliente</label>
                 <select class="form-control select2" id="contract" name="contract" <?= isset($register) ? "value='{$register->contract}'" : '' ?>>
-                    <option selected>Contrato</option>
+                    <option selected>Nome</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">Serviço</label>
-                <select class="form-control select2" id="service" name="service" <?= isset($register) ? "value='{$register->service}'" : '' ?>>
-                    <option selected>Serviço</option>
+                <label for="uf" class="form-label">Origem</label>
+                <select class="form-control select2" id="origin" name="origin" <?= isset($register) ? "value='{$register->origin}'" : '' ?>>
+                    <option selected>Origem</option>
+                    <option value="1">Telefone</option>
+                    <option value="2">Email</option>
+                    <option value="3">Suporte Online</option>
+                    <option value="4">Pessoa no local</option>
                 </select>
             </div>
+
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Empresa</label>
                 <select class="form-control select2" id="company" name="company" <?= isset($register) ? "value='{$register->company}'" : '' ?>>
@@ -41,9 +48,9 @@
                 </select>
             </div>
         </div>
-
+        <h4 class="mt-4">O.S</h4>
         <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Setor</label>
                 <select class="form-control select2" id="deposit" name="deposit" <?= isset($register) ? "value='{$register->deposit}'" : '' ?>>
                     <option selected>Setor</option>
@@ -54,7 +61,13 @@
                     <option value="4">Técnico de redes</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
+                <label for="uf" class="form-label">Serviço</label>
+                <select class="form-control select2" id="service" name="service" <?= isset($register) ? "value='{$register->service}'" : '' ?>>
+                    <option selected>Serviço</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Usuário Responsável</label>
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
                     <option selected>Usuário</option>
@@ -65,7 +78,7 @@
                 </select>
             </div>
             <!-- esse input tem que estudar uma forma de cadastrar o tipo de ocorrencia -->
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Tipo de Ocorrência</label>
                 <select class="form-control select2" id="type" name="type" <?= isset($register) ? "value='{$register->type}'" : '' ?>>
                     <option selected> Tipo de ocorrência</option>
@@ -77,16 +90,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="uf" class="form-label">Origem</label>
-                <select class="form-control select2" id="origin" name="origin" <?= isset($register) ? "value='{$register->origin}'" : '' ?>>
-                    <option selected>Origem</option>
-                    <option value="1">Telefone</option>
-                    <option value="2">Email</option>
-                    <option value="3">Suporte Online</option>
-                    <option value="4">Pessoa no local</option>
-                </select>
-            </div>
+
             <div class="mt-3 col-md-6">
                 <label for="uf" class="form-label">Status</label>
                 <select class="form-control select2" id="status" name="status" <?= isset($register) ? "value='{$register->status}'" : '' ?>>

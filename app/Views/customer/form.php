@@ -29,14 +29,14 @@
             Informações Gerais
         </h4>
 
-        <div class="row mb-4">
+        <div class="row mb-12">
             <div class="col">
                 <div class="mt-3 form-floating">
                     <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o Nome Completo" value="<?= isset($register) ? $register->name : '' ?>" required>
                     <label for="nomeCliente">Nome Completo</label>
                 </div>
             </div>
-            <div class="col">
+            <!-- <div class="col">
                 <div class="mt-3 form-floating">
                     <select class="form-select" id="plan_id" name="plan_id" aria-label="plano" required>
                         <?php foreach ($subscription as $plan) : ?>
@@ -45,8 +45,8 @@
                     </select>
                     <label for="plano">Plano</label>
                 </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
                 <div class="mt-3 form-floating">
                     <select class="form-select" id="onu_id" name="onu_id" value="<?= isset($register) ? $register->onu_id : '' ?>">
                         <?php foreach ($onus as $onu) : ?>
@@ -55,8 +55,8 @@
                     </select>
                     <label for="onu_id">ONU</label>
                 </div>
-            </div>
-            <div class="col">
+            </div> -->
+            <!-- <div class="col">
                 <div class="mt-3 form-floating">
                     <select class="form-select" id="pop_id" name="pop_id">
                         <?php foreach ($pops as $pop) : ?>
@@ -66,9 +66,9 @@
                     <label for="pop_id">POP</label>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <h4>
+        <h4 class="mt-2">
             Contato
         </h4>
 
@@ -168,6 +168,12 @@
                 <div class="mt-3 form-floating">
                     <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf" value="<?= isset($register) ? $register->cpf : '' ?>">
                     <label for="cpf">CPF</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" id="cnpj" class="form-control" name="cnpj" placeholder="Insira o CNPJ" value="<?= isset($register) ? $register->cnpj : '' ?>">
+                    <label for="cpf">CNPJ</label>
                 </div>
             </div>
             <div class="col">
