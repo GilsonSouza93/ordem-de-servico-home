@@ -57,7 +57,6 @@ class UserModel extends Model
             'name',
             'email',
             'phone1',
-            'phone2',
         ];
 
         $fieldsToReturn = [
@@ -65,7 +64,6 @@ class UserModel extends Model
             'name',
             'email',
             'phone1',
-            'phone2',
         ];
 
         $search = null;

@@ -32,10 +32,10 @@ app.name =
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = fvpag.com
-database.default.database = u789450869_development
-database.default.username = u789450869_development
-database.default.password = 203mcQ/0
+database.default.hostname = localhost
+database.default.database = orderservice
+database.default.username = root
+database.default.password = admin
 database.default.DBDriver = MySQLi
 database.default.DBPrefix =
 database.default.port = 3306

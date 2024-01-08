@@ -106,8 +106,7 @@
 
     function formatBody() {
         const body = {
-            name: document.querySelector('#name').value,
-            account_type_id: document.querySelector('#account_type_id ').value,
+            name: document.querySelector('#name').value,    
             email: document.querySelector('#email').value,
             password: document.querySelector('#password').value,
             phone1: document.querySelector('#phone1').value,
