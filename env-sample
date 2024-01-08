@@ -32,10 +32,10 @@ app.name =
 # DATABASE
 #--------------------------------------------------------------------
 
-database.default.hostname = fvpag.com
-database.default.database = u789450869_development
-database.default.username = u789450869_development
-database.default.password = 203mcQ/0
+database.default.hostname = 162.241.203.75
+database.default.database = homete64_HomeOrderService
+database.default.username = homete64_HomeOrderService
+database.default.password = ychXtQFLD{CW
 database.default.DBDriver = MySQLi
 database.default.DBPrefix =
 database.default.port = 3306
@@ -144,6 +144,6 @@ database.default.port = 3306
 
 # curlrequest.shareOptions = true
 
-AsaasGatewayApiUrlDevelopmentMode = 'https://sandbox.asaas.com/api/v3/';
+# AsaasGatewayApiUrlDevelopmentMode = 'https://sandbox.asaas.com/api/v3/';
 
 
