@@ -13,7 +13,20 @@ class UserModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'name',
+        'account_type_id',
+        'email',
+        'password',
+        'phone1',
+        'passwordConfirm',
+        'setor',
+        'deleted_at',
+        'updated_at',
+        'created_at',
+        'company_id',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,16 +51,43 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'name',
+            'email',
+            'phone1',
+            'phone2',
+        ];
 
-    public function getUsers(){
-        $session = session();
-        $company_id = $session->get('company_id');
+        $fieldsToReturn = [
+            'id',
+            'name',
+            'email',
+            'phone1',
+            'phone2',
+        ];
 
-        return $this->db->table($this->table)
-                        ->select('id, name')
-                        ->where('company_id', $company_id)
-                        ->get()
-                        ->getResultArray();
+        $search = null;
+
+        if(isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+                ->select($fieldsToReturn);
+
+        if($search) {
+            $query->groupStart();
+            foreach($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy('created_at', 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
     }
 
 }

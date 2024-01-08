@@ -20,10 +20,8 @@ class AccountModel extends Model
         'email',
         'password',
         'phone1',
-        'phone2',
-        'deleted_by',
-        'updated_by',
-        'created_by',
+        'passwordConfirm',
+        'setor',
         'deleted_at',
         'updated_at',
         'created_at',
@@ -57,18 +55,33 @@ class AccountModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
+            'id',
             'name',
+            'account_type_id',
             'email',
+            'password',
             'phone1',
-            'phone2',
+            'passwordConfirm',
+            'setor',
+            'deleted_at',
+            'updated_at',
+            'created_at',
+            'company_id',
         ];
 
         $fieldsToReturn = [
             'id',
             'name',
+            'account_type_id',
             'email',
+            'password',
             'phone1',
-            'phone2',
+            'passwordConfirm',
+            'setor',
+            'deleted_at',
+            'updated_at',
+            'created_at',
+            'company_id',
         ];
 
         $search = null;

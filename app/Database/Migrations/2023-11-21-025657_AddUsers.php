@@ -10,77 +10,81 @@ class AddUsers extends Migration
     {
         $this->forge->addField([
             "id" => [
-                "type" => "int",
+                "TYPE" => "INT",
                 "constraint" => 5,
                 "unsigned" => true,
                 "auto_increment" => true
             ],
 
             "name" => [
-                "type" => "varchar",
+                "type" => "VARCHAR",
+                "constraint" => 255
+            ],
+            
+            "email" => [
+                "type" => "VARCHAR",
+                "constraint" => 255
+            ],
+            
+            "phone1" => [
+                "type" => "VARCHAR",
+                "constraint" => 255,
+                "null" => true
+            ],
+
+            "password" => [
+                "type" => "VARCHAR",
+                "constraint" => 255
+            ],
+            "passwordConfirm" => [
+                "type" => "VARCHAR",
+                "constraint" => 255
+            ],
+            "setor" => [
+                "type" => "VARCHAR",
                 "constraint" => 255
             ],
 
             "account_type_id" => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
                 "unsigned" => true,
             ],
 
-            "email" => [
-                "type" => "varchar",
-                "constraint" => 255
-            ],
-
-            "password" => [
-                "type" => "varchar",
-                "constraint" => 255
-            ],
-
-            "phone1" => [
-                "type" => "varchar",
-                "constraint" => 255,
-                "null" => true
-            ],
-
-            "phone2" => [
-                "type" => "varchar",
-                "constraint" => 255,
-                "null" => true
-            ],
-
             "deleted_by" => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
                 "unsigned" => true,
                 "null" => true
             ],
 
             "updated_by" => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
                 "unsigned" => true,
                 "null" => true
             ],
 
             "deleted_at" => [
-                "type" => "timestamp",
+                "type" => "DATETIME",
                 "null" => true,
             ],
 
             "updated_at" => [
-                "type" => "timestamp",
+                "type" => "DATETIME",
                 "null" => true,
             ],
 
             "company_id" => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
             ],
             
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
+        $this->forge->addKey('id', true);
+        
         $this->forge->addPrimaryKey("id");
         $this->forge->addForeignKey("account_type_id", "account_types", "id");
 

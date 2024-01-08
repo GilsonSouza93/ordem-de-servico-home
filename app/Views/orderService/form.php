@@ -90,7 +90,6 @@
             </div>
         </div>
         <div class="row">
-
             <div class="mt-3 col-md-6">
                 <label for="uf" class="form-label">Status</label>
                 <select class="form-control select2" id="status" name="status" <?= isset($register) ? "value='{$register->status}'" : '' ?>>
