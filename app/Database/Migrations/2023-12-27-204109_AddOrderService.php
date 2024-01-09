@@ -15,7 +15,7 @@ class AddOrderService extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            
+
             "name" => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -92,7 +92,7 @@ class AddOrderService extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -102,13 +102,15 @@ class AddOrderService extends Migration
                 'null' => true,
             ],
 
-            
+
         ]);
-        
-        
-        
+
+
+
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
+
+        $this->forge->createTable('orderservice');
     }
 
     public function down()
