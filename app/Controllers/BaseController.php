@@ -290,10 +290,10 @@ abstract class BaseController extends Controller
                         'title' => 'Contas',
                         'href' => base_url('configuracoes/contas'),
                     ],
-                    'permisions_groups' => [
-                        'title' => 'Grupos de Permissão',
-                        'href' => base_url('configuracoes/grupo-permissao'),
-                    ],
+                    // 'permisions_groups' => [
+                    //     'title' => 'Grupos de Permissão',
+                    //     'href' => base_url('configuracoes/grupo-permissao'),
+                    // ],
                     // 'Planos' => [
                     //     'title' => 'Planos',
                     //     'href' => base_url('configuracoes/planos'),

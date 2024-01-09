@@ -60,8 +60,8 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
 
-        theadElements: ['Nome', 'Telefone','Endereço','POP', 'Ações'],
-        tbodyElements: ['name', 'phones', 'address1','pop_id', ['edit', 'delete', 'generate_bill', 'create_service_order']],
+        theadElements: ['Nome', 'Telefone','Cidade', 'Ações'],
+        tbodyElements: ['name', 'phones', 'city', ['edit', 'delete', 'generate_bill', 'create_service_order']],
         searchField: document.getElementById('search'),
     }
 

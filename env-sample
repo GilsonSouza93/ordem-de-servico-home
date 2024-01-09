@@ -33,9 +33,9 @@ app.name =
 #--------------------------------------------------------------------
 
 database.default.hostname = 162.241.203.75
-database.default.database = homete64_HomeOrderService
-database.default.username = homete64_HomeOrderService
-database.default.password = ychXtQFLD{CW
+database.default.database = homete64_ordeService_desenvolvimento
+database.default.username = homete64_ordeService_desenvolvim
+database.default.password = m%.iyBV]c0;$
 database.default.DBDriver = MySQLi
 database.default.DBPrefix =
 database.default.port = 3306

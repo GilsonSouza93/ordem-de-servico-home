@@ -36,38 +36,6 @@
                     <label for="nomeCliente">Nome Completo</label>
                 </div>
             </div>
-            <!-- <div class="col">
-                <div class="mt-3 form-floating">
-                    <select class="form-select" id="plan_id" name="plan_id" aria-label="plano" required>
-                        <?php foreach ($subscription as $plan) : ?>
-                            <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
-                    <label for="plano">Plano</label>
-                </div>
-            </div> -->
-            <!-- <div class="col">
-                <div class="mt-3 form-floating">
-                    <select class="form-select" id="onu_id" name="onu_id" value="<?= isset($register) ? $register->onu_id : '' ?>">
-                        <?php foreach ($onus as $onu) : ?>
-                            <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <label for="onu_id">ONU</label>
-                </div>
-            </div> -->
-            <!-- <div class="col">
-                <div class="mt-3 form-floating">
-                    <select class="form-select" id="pop_id" name="pop_id">
-                        <?php foreach ($pops as $pop) : ?>
-                            <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <label for="pop_id">POP</label>
-                </div>
-            </div>
-        </div> -->
-
         <h4 class="mt-2">
             Contato
         </h4>
@@ -113,8 +81,8 @@
             </div>
             <div class="col">
                 <div class="mt-3 form-floating">
-                    <input type="text" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>" onclick="showMessageToFillZipCode()">
-                    <label for="address2">Bairro</label>
+                    <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Bairro" value="<?= isset($register) ? $register->neighborhood     : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="neighborhood">Bairro</label>
                 </div>
             </div>
 
@@ -140,7 +108,7 @@
             </div>
             <div class="col">
                 <div class="mt-3 form-floating">
-                    <input type="text" class="form-control" id="state" name="state" placeholder="Ponto de referência" value="<?= isset($register) ? $register->state : '' ?>" onclick="showMessageToFillZipCode()">
+                    <input type="text" class="form-control" id="state" name="state" placeholder="Estado" value="<?= isset($register) ? $register->state : '' ?>" onclick="showMessageToFillZipCode()">
                     <label for="state">Estado</label>
                 </div>
             </div>

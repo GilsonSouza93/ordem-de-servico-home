@@ -20,20 +20,20 @@ class CustomerController extends BaseController
         $this->mainModel = model('CustomerModel');
         $this->subscriptionModel = model('SubscriptionModel');
        
-        $this->onuModel = model('OnuModel');
-        $this->data['onus'] = $this->onuModel->findAll();
-        $this->data['subscription'] = $this->subscriptionModel->findAll();
+        // $this->onuModel = model('OnuModel');
+        // $this->data['onus'] = $this->onuModel->findAll();
+        // $this->data['subscription'] = $this->subscriptionModel->findAll();
 
-        $popModel = model('PopModel');
+        // $popModel = model('PopModel');
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
+        // $this->data['pops'] = $popModel->where('active', true)->findAll();
         
-        $subscriptionModel = model('SubscriptionModel');
+        // $subscriptionModel = model('SubscriptionModel');
 
-        $popModel = model('PopModel');
-        $this->data['pops'] = $popModel->findAll();
+        // $popModel = model('PopModel');
+        // $this->data['pops'] = $popModel->findAll();
 
-        $this->data['subscription'] = $subscriptionModel->findAll();
+        // $this->data['subscription'] = $subscriptionModel->findAll();
 
         $this->saveMessage = 'Cliente salvo com sucesso!';
         parent::__construct();
