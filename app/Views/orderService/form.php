@@ -24,24 +24,24 @@
             Dados do Cliente
         </h4>
         <div class="row">
-            <div class="mt-3 col-md-4">
+            <!-- ADICONARO FUNCAO DE AUTO COMPLETE -->
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Nome do Cliente</label>
-                <select class="form-control select2" id="contract" name="contract" <?= isset($register) ? "value='{$register->contract}'" : '' ?>>
-                    <option selected>Nome</option>
+                <select class="form-control select2" id="name" name="name" <?= isset($register) ? "value='{$register->name}'" : '' ?>>
+                    <?php foreach ($costumer as $costumer) : ?>
+                        <option value="<?= $costumer['id'] ?>"><?= $costumer['costumer'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">Origem</label>
-                <select class="form-control select2" id="origin" name="origin" <?= isset($register) ? "value='{$register->origin}'" : '' ?>>
-                    <option selected>Origem</option>
-                    <option value="1">Telefone</option>
-                    <option value="2">Email</option>
-                    <option value="3">Suporte Online</option>
-                    <option value="4">Pessoa no local</option>
-                </select>
+            <div class="mt-3 col-md-3">
+                <label for="placa" class="form-label">Telefone contato</label>
+                <input type="text" id="phone" class="form-control" name="phone" <?= isset($register) ? "value='{$register->phone}'" : '' ?>>
             </div>
-
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
+                <label for="placa" class="form-label">CPF / CNPJ</label>
+                <input type="text" id="cpf" class="form-control" name="cpf" <?= isset($register) ? "value='{$register->cpf}'" : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Empresa</label>
                 <select class="form-control select2" id="company" name="company" <?= isset($register) ? "value='{$register->company}'" : '' ?>>
                     <option selected>Empresa</option>
@@ -52,7 +52,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Setor</label>
-                <select class="form-control select2" id="deposit" name="deposit" <?= isset($register) ? "value='{$register->deposit}'" : '' ?>>
+                <select class="form-control select2" id="setor" name="setor" <?= isset($register) ? "value='{$register->setor}'" : '' ?>>
                     <option selected>Setor</option>
                     <option value="1">Comercial</option>
                     <option value="2">Suporte técnico TI</option>
@@ -68,8 +68,9 @@
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">Usuário Responsável</label>
+                <label for="uf" class="form-label">Responsável</label>
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
+                    <!-- Puxar os usuários cadastrados -->
                     <option selected>Usuário</option>
                     <option value="1">Técnico - TI</option>
                     <option value="2">Técnico - Redes</option>
@@ -100,30 +101,26 @@
                     <option value="4">Encerrada</option>
                 </select>
             </div>
+            <div class="mt-3 col-md-6">
+                <label for="uf" class="form-label">Origem</label>
+                <select class="form-control select2" id="origin" name="origin" <?= isset($register) ? "value='{$register->origin}'" : '' ?>>
+                    <option selected>Origem</option>
+                    <option value="1">Telefone</option>
+                    <option value="2">Email</option>
+                    <option value="3">Suporte Online</option>
+                    <option value="4">Pessoa no local</option>
+                </select>
+            </div>
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="modelo" class="form-label">Nome</label>
-                <input type="text" id="name" class="form-control" name="name" <?= isset($register) ? "value='{$register->name}'" : '' ?>>
-            </div>
-            <!-- Iserir oa função que adiciona mais de um telefone -->
-            <div class="mt-3 col-md-3">
-                <label for="placa" class="form-label">Telefone contato</label>
-                <input type="text" id="phone" class="form-control" name="phone" <?= isset($register) ? "value='{$register->phone}'" : '' ?>>
-            </div>
-
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-12">
                 <label for="modelo" class="form-label">Observação</label>
                 <input type="text" id="obs" class="form-control" name="obs" <?= isset($register) ? "value='{$register->obs}'" : '' ?>>
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="placa" class="form-label">Observação interna</label>
-                <input type="text" id="obsin" class="form-control" name="obsin" <?= isset($register) ? "value='{$register->obsin}'" : '' ?>>
-            </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="mt-3 col-md-8">
                 <label for="local" class="form-label">Local</label>
                 <input type="text" id="locate" class="form-control" name="locate" <?= isset($register) ? "value='{$register->locate}'" : '' ?>>
@@ -135,11 +132,11 @@
             <div class="mt-5 col-md-2">
                 <input type="checkbox" name="" id="notification" names="notification" <?= isset($register) ? "value='{$register->notification}'" : '' ?>>
                 <label for="disponivel" class="form-label ">Notificar Clientes</label>
-                <!-- as notificações de abertura de OS será enviado para os contatos cadastrados, pode ser via SMS, Via email, wpp, etc... -->
-            </div>
-        </div>
+                as notificações de abertura de OS será enviado para os contatos cadastrados, pode ser via SMS, Via email, wpp, etc... -->
+</div>
+</div>
 
-    </form>
+</form>
 </div>
 <?= $this->endSection() ?>
 

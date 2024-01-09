@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class OrderServiceModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'orderservices';
+    protected $table            = 'order_service';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,24 +15,22 @@ class OrderServiceModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        'contract',
-        'service',
-        'company',
-        'deposit',
-        'user',
-        'type',
-        'origin',
-        'status',
         'name',
         'phone',
+        'cpf',
+        'company',
+        'setor',
+        'service',
+        'user',
+        'type',
+        'status',
+        'origin',
         'obs',
-        'obsin',
-        'available',
-        'notification',
-        'updated_at',
-        'deleted_at',
         'company_id',
         'created_at',
+        'updated_at',
+        'deleted_at',
+
     ];
 
     // Dates
@@ -62,42 +60,34 @@ class OrderServiceModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'contract',
-            'service',
-            'company',
-            'deposit',
-            'user',
-            'type',
-            'origin',
-            'status',
             'name',
             'phone',
+            'cpf',
+            'company',
+            'setor',
+            'service',
+            'user',
+            'type',
+            'status',
+            'origin',
             'obs',
-            'obsin',
-            'available',
-            'notification',
         ];
 
         $fieldsToReturn = [
             'id',
-            'contract',
-            'service',
-            'company',
-            'deposit',
-            'user',
-            'type',
-            'origin',
-            'status',
             'name',
             'phone',
+            'cpf',
+            'company',
+            'setor',
+            'service',
+            'user',
+            'type',
+            'status',
+            'origin',
             'obs',
-            'obsin',
-            'available',
-            'notification',
-            'updated_at',
-            'deleted_at',
             'company_id',
-            'created_at',
+
         ];
         
         $createAtName = 'created_at';

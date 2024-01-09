@@ -454,6 +454,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('ordem-de-servico', static function ($routes) {
             $routes->get('/', 'OrderServiceController::index');
             $routes->get('novo', 'OrderServiceController::form');
+            $routes->post('search', 'OrderServiceController::search');
         });
 
         // outros

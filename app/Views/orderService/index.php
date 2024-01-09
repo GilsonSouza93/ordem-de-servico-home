@@ -24,14 +24,14 @@
 
 <?= $this->endSection() ?>
 
-<!-- <?= $this->section('script') ?>
+<?= $this->section('script') ?>
 
 <script>
      const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['ID', 'Status', 'Contrato', 'Tipo', 'Descrição', 'Criada', 'Agendada', 'Encerrrada', 'Responsável', 'Usuário', 'OS', 'ações'],
-        tbodyElements: ['id', 'city', 'uf', 'user', 'active',  ['edit', 'delete']],
+        theadElements: ['ID', 'Nome','Status', 'Responsável', 'Descrição', 'ações'],
+        tbodyElements: ['id', 'name', 'status', 'user', 'obs',  ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
@@ -49,4 +49,4 @@
     });
 </script>
 
-<?= $this->endSection() ?> -->
+<?= $this->endSection() ?> 
