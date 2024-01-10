@@ -68,6 +68,15 @@
     document.addEventListener('DOMContentLoaded', () => {
         advancedSearchEngine(renderTableOptions);
     });
+
+    const search = () => {
+        advancedSearchEngine(renderTableOptions);
+    }
+    const btnSearch = document.getElementById('searchBtn');
+
+    btnSearch.addEventListener('click', () => {
+        advancedSearchEngine(renderTableOptions);
+    });
 </script>
 
 <?= $this->endSection() ?>
