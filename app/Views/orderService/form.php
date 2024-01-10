@@ -29,7 +29,7 @@
                 <label for="uf" class="form-label">Nome do Cliente</label>
                 <select class="form-control select2" id="name" name="name" <?= isset($register) ? "value='{$register->name}'" : '' ?>>
                     <?php foreach ($costumer as $costumer) : ?>
-                        <option value="<?= $costumer['id'] ?>"><?= $costumer['costumer'] ?></option>
+                        <option value="<?= $costumer['id'] ?>"><?= $costumer['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -119,28 +119,11 @@
                 <input type="text" id="obs" class="form-control" name="obs" <?= isset($register) ? "value='{$register->obs}'" : '' ?>>
             </div>
         </div>
-
-        <!-- <div class="row">
-            <div class="mt-3 col-md-8">
-                <label for="local" class="form-label">Local</label>
-                <input type="text" id="locate" class="form-control" name="locate" <?= isset($register) ? "value='{$register->locate}'" : '' ?>>
-            </div>
-            <div class="mt-5 col-md-2">
-                <input type="checkbox" name="" id="available" names="available" <?= isset($register) ? "value='{$register->available}'" : '' ?>>
-                <label for="disponivel" class="form-label ">Disponível para OS?</label>
-            </div>
-            <div class="mt-5 col-md-2">
-                <input type="checkbox" name="" id="notification" names="notification" <?= isset($register) ? "value='{$register->notification}'" : '' ?>>
-                <label for="disponivel" class="form-label ">Notificar Clientes</label>
-                as notificações de abertura de OS será enviado para os contatos cadastrados, pode ser via SMS, Via email, wpp, etc... -->
-</div>
-</div>
-
-</form>
+    </form>
 </div>
 <?= $this->endSection() ?>
 
-<!-- <?= $this->section('script') ?>
+<?= $this->section('script') ?>
 
 <script>
     const submitBtn = document.querySelector('#submit-btn');
@@ -154,9 +137,9 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
             .then(data => {
                 hideLoading();
                 if (data.status === 'success') {
@@ -173,4 +156,4 @@
     });
 </script>
 
-<?= $this->endSection() ?> -->
+<?= $this->endSection() ?>

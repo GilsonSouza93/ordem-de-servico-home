@@ -455,6 +455,9 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'OrderServiceController::index');
             $routes->get('novo', 'OrderServiceController::form');
             $routes->post('search', 'OrderServiceController::search');
+            $routes->post('save', 'ContractController::save');
+            $routes->post('search', 'ContractController::search');
+            $routes->post('delete', 'ContractController::delete');
         });
 
         // outros
