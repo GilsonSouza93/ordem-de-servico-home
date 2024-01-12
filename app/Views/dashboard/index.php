@@ -62,10 +62,10 @@
         </div>
     </div>
 
-
+<!-- 
     <div class="row rounded m-0" id="map" style="height: 40vh">
     </div>
-</div>
+</div> -->
 
 
 </div>

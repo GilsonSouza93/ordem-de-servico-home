@@ -62,36 +62,28 @@
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">Serviço</label>
-                <select class="form-control select2" id="service" name="service" <?= isset($register) ? "value='{$register->service}'" : '' ?>>
-                    <option selected>Serviço</option>
-                </select>
+                <label for="modelo" class="form-label">Serviço</label>
+                <input type="text" id="service" class="form-control" name="service" <?= isset($register) ? "value='{$register->service}'" : '' ?>>
             </div>
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Responsável</label>
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
                     <!-- Puxar os usuários cadastrados -->
                     <option selected>Usuário</option>
-                    <option value="1">Técnico - TI</option>
-                    <option value="2">Técnico - Redes</option>
-                    <option value="3">Financeiro</option>
-                    <option value="4">Administrativo</option>
+                    <option value="1">Técnico - TI Gilson Souza</option>
+                    <option value="2">Técnico - Redes e Produtos - Gilson Moura</option>
+                    <option value="3">Financeiro - Fabiana</option>
+                    <option value="4">Financeiro - Eduarda</option>
                 </select>
             </div>
             <!-- esse input tem que estudar uma forma de cadastrar o tipo de ocorrencia -->
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">Tipo de Ocorrência</label>
-                <select class="form-control select2" id="type" name="type" <?= isset($register) ? "value='{$register->type}'" : '' ?>>
-                    <option selected> Tipo de ocorrência</option>
-                    <option value="1">Técnico - TI - Erro no banco de dados</option>
-                    <option value="2">Técnico - Redes configurar radius</option>
-                    <option value="3">Financeiro - emitir boleto</option>
-                    <option value="4">Administrativo - alterar endereço</option>
-                </select>
+                <label for="modelo" class="form-label">Tipo da Ocorrencia</label>
+                <input type="text" id="type" class="form-control" name="type" <?= isset($register) ? "value='{$register->type}'" : '' ?>>
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-6">
+            <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Status</label>
                 <select class="form-control select2" id="status" name="status" <?= isset($register) ? "value='{$register->status}'" : '' ?>>
                     <option selected>Status</option>
@@ -101,7 +93,14 @@
                     <option value="4">Encerrada</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-6">
+            <div class="mt-3 col-md-4">
+                <label for="uf" class="form-label">Produto</label>
+                <select class="form-control select2" id="product" name="product" <?= isset($register) ? "value='{$register->product}'" : '' ?>>
+                    <option selected>Estoque</option>
+                        <!-- Foreach de produtos -->
+                </select>
+            </div>
+            <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Origem</label>
                 <select class="form-control select2" id="origin" name="origin" <?= isset($register) ? "value='{$register->origin}'" : '' ?>>
                     <option selected>Origem</option>
