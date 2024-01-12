@@ -70,7 +70,6 @@ class AddRouter extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('olt_id', 'olts', 'id');
         $this->forge->createTable('routers');
 
     }

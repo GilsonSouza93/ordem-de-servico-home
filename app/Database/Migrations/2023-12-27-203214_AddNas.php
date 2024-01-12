@@ -104,7 +104,6 @@ class AddNas extends Migration
         ]);
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('ip_radius', 'radiusnan', 'ip_address');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('nas');

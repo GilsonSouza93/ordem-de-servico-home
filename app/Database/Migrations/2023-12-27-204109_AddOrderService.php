@@ -75,19 +75,7 @@ class AddOrderService extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
-            "deleted_by" => [
-                "type" => "INT",
-                "constraint" => 5,
-                "unsigned" => true,
-                "null" => true
-            ],
 
-            "updated_by" => [
-                "type" => "INT",
-                "constraint" => 5,
-                "unsigned" => true,
-                "null" => true
-            ],
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,

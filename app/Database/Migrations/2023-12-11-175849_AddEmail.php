@@ -159,9 +159,6 @@ class AddEmail extends Migration
 
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('pop_id', 'pops', 'id');
-        $this->forge->addForeignKey('olt_id', 'olts', 'id');
-        $this->forge->addForeignKey('plan_id', 'plans', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('emails');

@@ -123,9 +123,6 @@ class AddTicket extends Migration
 
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('pop_id', 'pops', 'id');
-        $this->forge->addForeignKey('plans_id', 'plans', 'id');
         $this->forge->createTable('ticket');
     }
 

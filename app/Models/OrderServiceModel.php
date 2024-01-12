@@ -86,7 +86,6 @@ class OrderServiceModel extends Model
             'status',
             'origin',
             'obs',
-            'company_id',
 
         ];
         

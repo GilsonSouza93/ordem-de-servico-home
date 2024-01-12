@@ -21,10 +21,6 @@ class OrderServiceController extends BaseController
 
         $this->data['costumer'] = $this->CustomerModel->findAll();
 
-
-
-
-
         $this->saveMessage = 'Ordem de Serviço salva com sucesso!';
         parent::__construct();
     }

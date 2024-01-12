@@ -130,7 +130,7 @@ class AddSwitch extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('pole_id', 'poles', 'id');
+
         $this->forge->createTable('switch');
 
 
