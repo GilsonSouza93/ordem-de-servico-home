@@ -24,8 +24,10 @@ class OrderServiceModel extends Model
         'user',
         'type',
         'status',
+        'product',
         'origin',
-        'obs',
+        'shop',
+        'description',
         'company_id',
         'created_at',
         'updated_at',
@@ -69,8 +71,10 @@ class OrderServiceModel extends Model
             'user',
             'type',
             'status',
+            'product',
             'origin',
-            'obs',
+            'shop',
+            'description',
         ];
 
         $fieldsToReturn = [
@@ -84,8 +88,10 @@ class OrderServiceModel extends Model
             'user',
             'type',
             'status',
+            'product',
             'origin',
-            'obs',
+            'shop',
+            'description',
 
         ];
         
@@ -112,4 +118,53 @@ class OrderServiceModel extends Model
 
         return $result;
     }
+
+    // public function getDashboardData()
+    // {
+    //     $session = session();
+
+    //     $companyId = $session->get('company_id');
+
+    //     $query = $this->db->table($this->table)
+    //         ->select('status, count(status) as count')
+    //         ->where('company_id', $companyId)
+    //         ->groupBy('status')
+    //         ->get()->getResultArray();
+
+    //     $data = [
+    //         'aberto' => 0,
+    //         'andamento' => 0,
+    //         'pendente' => 0,
+    //         'cancelada' => 0,
+    //         'encerrada' => 0,
+    //         'concluidos' => 0,
+    //     ];
+
+    //     foreach ($query as $row) {
+    //         switch ($row['status']) {
+    //             case 'aberto':
+    //                 $data['aberto'] = $row['count'];
+    //                 break;
+    //             case 'andamento':
+    //                 $data['andamento'] = $row['count'];
+    //                 break;
+    //             case 'pendente':
+    //                 $data['pendente'] = $row['count'];
+    //                 break;
+    //             case 'cancelados':
+    //                 $data['cancelados'] = $row['count'];
+    //                 break;
+    //             case 'encerrada':
+    //                 $data['encerrada'] = $row['count'];
+    //                 break;
+    //             case 'concluidos':
+    //                 $data['concluidos'] = $row['count'];
+    //                 break;    
+    //         }
+    //     }
+
+    //     return $data;
+    // }
+
+
 }

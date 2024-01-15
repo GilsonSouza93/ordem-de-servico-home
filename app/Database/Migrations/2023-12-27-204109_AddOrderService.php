@@ -60,13 +60,20 @@ class AddOrderService extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-
+            "product" => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             "origin" => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            "shop" => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
 
-            "obs" => [
+            "description" => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],

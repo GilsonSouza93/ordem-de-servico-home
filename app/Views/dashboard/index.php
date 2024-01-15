@@ -6,7 +6,10 @@
     <h2>
         <?= $tittle ?>
     </h2>
+      
 
+
+<!-- 
     <div class="row p-1 mb-4">
         <div class="col gradient-1 p-3">
             <div class="d-flex justify-content-around align-items-center h-100">
@@ -49,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row mb-4 card-2">
         <div class="col-md-8">
@@ -62,6 +65,47 @@
         </div>
     </div>
 
+    <div class="card p-4 d-flex flex-row justify-content-between mt-3">
+        <h4>
+            Clientes: <span class="badge bg-danger" id="clientes">
+                0
+            </span>
+        </h4>
+
+        <h4>
+            Abertos: <span class="badge bg-success" id="abertos">
+                0
+            </span>
+        </h4>
+
+        <h4>
+            Em andamento: <span class="badge bg-secondary" id="andamento">
+                0
+            </span>
+        </h4>
+
+        <h4>
+            Concluídos: <span class="badge bg-warning" id="concluidos">
+                0
+            </span>
+        </h4>
+
+        <h4>
+            Pendente: <span class="badge bg-info" id="pendente">
+                0
+            </span>
+        </h4>
+
+        <h4>
+            Cancelados: <span class="badge bg-info" id="cancelados">
+                0
+            </span>
+        </h4>
+        
+        <button class="btn btn-outline-light">
+            Detalhes
+        </button>
+    </div>
 <!-- 
     <div class="row rounded m-0" id="map" style="height: 40vh">
     </div>
@@ -184,23 +228,48 @@
     }
     document.addEventListener('DOMContentLoaded', () => {
         initMap();
-        renderInfoCards();
+        info();
     });
 
-    const renderInfoCards = () => {
-        const customersCard = document.querySelector('#customerQty');
-        const postCard = document.querySelector('#postQty');
-        const withdrawCard = document.querySelector('#withdrawValue');
-        const notificationsCard = document.querySelector('#notifications');
+    const info = () => {
+        const customersCard = document.querySelector('#clientes');
+        // const abertoCard = document.querySelector('#abertoQty');
+        // const andamentoCard = document.querySelector('#andamentoQty');
+        // const concluidosCard = document.querySelector('#concluidosQty');
+        // const pendenteCard = document.querySelector('#pendenteQty');
+        // const canceladosCard = document.querySelector('#canceladosQty');
 
         fetch('<?= base_url('dashboard/info') ?>')
             .then(response => response.json())
             .then(data => {
                 customersCard.innerHTML = data.customerQty;
-                postCard.innerHTML = data.postQty;
-                withdrawCard.innerHTML = data.withdrawValue;
-                notificationsCard.innerHTML = data.notifications.length;
+x
             });
+    }
+
+
+    const getDashboardData = async () => {
+        const response = await fetch (indow.location.href + '/getDashboardData');
+        console.log(response);
+        const data = await response.json();
+
+        if (data.status === 'success') {
+            const {
+                clientes,
+                aberto,
+                andamento,
+                concluidos,
+                pendente,
+                cancelados
+            } = data.data;
+
+            document.getElementById('clientes').innerText = clientes;
+            document.getElementById('aberto').innerText = abertos;
+            document.getElementById('andamento').innerText = andamento;
+            document.getElementById('concluidos').innerText = concluidos;
+            document.getElementById('pendente').innerText = pendente;
+            document.getElementById('cancelados').innerText = cancelados;
+        }
     }
 </script>
 

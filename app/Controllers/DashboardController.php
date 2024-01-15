@@ -10,29 +10,34 @@ class DashboardController extends BaseController
     public $viewPath = 'dashboard';
 
     protected $customerModel;
-    protected $poleModel;
-    protected $FinancialTransactionsController;
-    protected $notificationModel;   
+    protected $orderServiceModel;
+  
 
     public function __construct()
     {
         $this->customerModel = new \App\Models\CustomerModel();
-        $this->poleModel = new \App\Models\PoleModel();
-        $this->FinancialTransactionsController = new \App\Controllers\FinancialTransactionsController();
-        $this->notificationModel = new \App\Models\NotificationModel();
-
+        return parent::__construct();
+        $this->orderServiceModel = new \App\Models\OrderServiceModel();
         return parent::__construct();
     }
 
     public function info()
     {
         $data = [
-            'customerQty' => $this->customerModel->countAll(),
-            'postQty' => $this->poleModel->countAll(),
-            'depositValue' => 0,
-            'notifications' => $this->notificationModel->getNotifications(),
+            'clientes' => $this->customerModel->countAll(),
+            '' => $this->orderServiceModel->countAll(),
         ];
 
         return $this->response->setJSON($data);
     }
+
+    public function getDashboardData()
+    {
+      return $this->response->setJSON([
+        'status' => 'success',
+        'data' => $this->mainModel->getDashboardData(),
+      ]);
+    }
+    
+    
 }
