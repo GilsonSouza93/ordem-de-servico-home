@@ -70,10 +70,9 @@
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
                     <!-- Puxar os usuários cadastrados -->
                     <option selected>Usuário</option>
-                    <option value="Gilson Souza">Técnico - TI Gilson Souza</option>
-                    <option value="Gilson Moura">Técnico - Redes e Produtos - Gilson Moura</option>
-                    <option value="Fabiana">Financeiro - Fabiana</option>
-                    <option value="Eduarda">Financeiro - Eduarda</option>
+                    <?php foreach ($costumer as $costumer) : ?>
+                        <option value="<?= $costumer['id'] ?>"><?= $costumer['name'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <!-- esse input tem que estudar uma forma de cadastrar o tipo de ocorrencia -->
