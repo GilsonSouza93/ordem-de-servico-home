@@ -22,7 +22,7 @@ class OrderServiceModel extends Model
         'setor',
         'service',
         'user',
-        'type',
+        'date_of_birth',
         'status',
         'product',
         'origin',
@@ -69,7 +69,7 @@ class OrderServiceModel extends Model
             'setor',
             'service',
             'user',
-            'type',
+            'date_of_birth',
             'status',
             'product',
             'origin',
@@ -86,13 +86,12 @@ class OrderServiceModel extends Model
             'setor',
             'service',
             'user',
-            'type',
+            'date_of_birth',
             'status',
             'product',
             'origin',
             'shop',
             'description',
-
         ];
         
         $createAtName = 'created_at';

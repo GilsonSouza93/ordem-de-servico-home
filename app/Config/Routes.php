@@ -458,6 +458,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'OrderServiceController::save');
             $routes->post('search', 'OrderServiceController::search');
             $routes->post('delete', 'OrderServiceController::delete');
+            $routes->get('editar/(:num)', 'OrderServiceController::edit/$1');
         });
 
         // outros

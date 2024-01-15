@@ -29,7 +29,7 @@
                 <label for="uf" class="form-label">Nome do Cliente</label>
                 <select class="form-control select2" id="name" name="name" <?= isset($register) ? "value='{$register->name}'" : '' ?>>
                     <?php foreach ($costumer as $costumer) : ?>
-                        <option value="<?= $costumer['id'] ?>"><?= $costumer['name'] ?></option>
+                        <option value="<?= $costumer['name'] ?>"><?= $costumer['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -68,18 +68,17 @@
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Responsável</label>
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
-                    <!-- Puxar os usuários cadastrados -->
-                    <option selected>Usuário</option>
-                    <?php foreach ($costumer as $costumer) : ?>
-                        <option value="<?= $costumer['id'] ?>"><?= $costumer['name'] ?></option>
+                    <option selected>Responsável</option>
+                    <?php foreach ($account as $account) : ?>
+                        <option value="<?= $account['id'] ?>"><?= $account['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
-            <!-- esse input tem que estudar uma forma de cadastrar o tipo de ocorrencia -->
             <div class="mt-3 col-md-3">
-                <label for="modelo" class="form-label">Tipo da Ocorrencia</label>
-                <input type="text" id="type" class="form-control" name="type" <?= isset($register) ? "value='{$register->type}'" : '' ?>>
+                <label for="date_of_birth" class='form-label'>Data de Entrada</label>
+                <input type="date" id="date_of_birth" class="form-control" name="date_of_birth" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
             </div>
+
         </div>
         <div class="row">
             <div class="mt-3 col-md-3">
@@ -96,8 +95,9 @@
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Produto</label>
                 <select class="form-control select2" id="product" name="product" <?= isset($register) ? "value='{$register->product}'" : '' ?>>
-                    <option selected>Estoque</option>
-                        <!-- Foreach de produtos -->
+                    <?php foreach ($product as $product) : ?>
+                        <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="mt-3 col-md-3">

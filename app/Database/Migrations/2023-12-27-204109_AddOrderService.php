@@ -50,10 +50,10 @@ class AddOrderService extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-
-            "type" => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
+            
+            'date_of_birth' => [
+                'type' => 'DATE',
+                'null' => true,
             ],
 
             "status" => [

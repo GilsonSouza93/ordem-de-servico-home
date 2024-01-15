@@ -12,6 +12,8 @@ class OrderServiceController extends BaseController
     public $baseRoute = '/suporte/ordem-de-servico';
 
     public $CustomerModel;
+    public $AccountModel;
+    public $ProductModel;
 
     public function __construct()
     {
@@ -20,7 +22,15 @@ class OrderServiceController extends BaseController
         $this->CustomerModel = model('CustomerModel');
 
         $this->data['costumer'] = $this->CustomerModel->findAll();
+        
+        $this->AccountModel = model('AccountModel');
 
+        $this->data['account'] = $this->AccountModel->findAll();
+        
+        $this->ProductModel = model('ProductModel');
+
+        $this->data['product'] = $this->ProductModel->findAll();
+        
         $this->saveMessage = 'Ordem de Serviço salva com sucesso!';
         parent::__construct();
     }
