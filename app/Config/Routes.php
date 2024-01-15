@@ -511,6 +511,15 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'VehicleController::delete');
             $routes->post('search', 'VehicleController::search');
         });
+        $routes->group('cursos', static function ($routes) {
+            $routes->get('/', 'CourseController::index');
+            $routes->get('novo', 'CourseController::form');
+            $routes->post('save', 'CourseController::save');
+            $routes->get('novo', 'CourseController::filter');
+            $routes->get('editar/(:num)', 'CourseController::edit/$1');
+            $routes->post('delete', 'CourseController::delete');
+            $routes->post('search', 'CourseController::search');
+        });
     });
 });
 /*

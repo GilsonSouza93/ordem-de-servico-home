@@ -128,17 +128,21 @@ abstract class BaseController extends Controller
 
             // ],
 
-            // 'gerencial' => [
-            //     'title' => 'Gerencial',
-            //     'href' => base_url('gerencial'),
-            //     'icon' => '<i class="fas fa-tools"></i>',
-            //     'show_subitems' => true,
-            //     'color' => '#3e444a',
-            //     'subitems' => [
-            //         'pop' => [
-            //             'title' => 'POP',
-            //             'href' => base_url('gerencial/pop'),
-            //         ],
+            'gerencial' => [
+                'title' => 'Gerencial',
+                'href' => base_url('gerencial'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#3e444a',
+                'subitems' => [
+                    'cursos' => [
+                        'title' => 'Cursos',
+                        'href' => base_url('gerencial/cursos'),
+                    ],
+                    // 'pop' => [
+                    //     'title' => 'POP',
+                    //     'href' => base_url('gerencial/pop'),
+                    // ],
             //         'email' => [
             //             'title' => 'Email',
             //             'href' => base_url('gerencial/email'),
@@ -208,8 +212,8 @@ abstract class BaseController extends Controller
             //             'href' => base_url('equipamentos/servidor'),
             //             'icon' => '<i class="fas fa-server"></i>'
             //         ]
-            //     ]
-            // ],
+                ]
+            ],
 
             'Estoque' => [
                 'title' => 'Estoque',

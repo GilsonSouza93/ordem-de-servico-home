@@ -3,12 +3,18 @@
 <?= $this->section('content') ?>
 
 <div>
-    <h2>
-        <?= $tittle ?>
-    </h2>
-      
+    <h2><?= $tittle ?></h2>
 
-
+    <div class="row py-3 my-3">
+        <div class="col-md-8">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
+        </div>
+        <div class="col-md-4 btn-group">
+            <button class="btn btn-success" id="searchBtn">Pesquisar</button>
+            <button class="btn btn-success" onclick="openModalFilter()">Filtros</button>
+            <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
+        </div>
+    </div>
 <!-- 
     <div class="row p-1 mb-4">
         <div class="col gradient-1 p-3">
@@ -54,20 +60,9 @@
         </div>
     </div> -->
 
-    <div class="row mb-4 card-2">
-        <div class="col-md-8">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
-        </div>
-        <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalFilterPost()">Filtrar Endereço</button>
-
-        </div>
-    </div>
-
     <div class="card p-4 d-flex flex-row justify-content-between mt-3">
         <h4>
-            Clientes: <span class="badge bg-danger" id="clientes">
+            Previsto: <span class="badge bg-info" id="pendente">
                 0
             </span>
         </h4>
@@ -83,15 +78,9 @@
                 0
             </span>
         </h4>
-
+        
         <h4>
             Concluídos: <span class="badge bg-warning" id="concluidos">
-                0
-            </span>
-        </h4>
-
-        <h4>
-            Pendente: <span class="badge bg-info" id="pendente">
                 0
             </span>
         </h4>
@@ -101,7 +90,7 @@
                 0
             </span>
         </h4>
-        
+
         <button class="btn btn-outline-light">
             Detalhes
         </button>
@@ -245,102 +234,102 @@ document.addEventListener('DOMContentLoaded', function() {
         modalFilter.show();
     }
 
-    function initMap() {
-        var mapOptions = {
-            center: {
-                lat: -9.719727,
-                lng: -50.911177
-            },
-            zoom: 3,
-            mapTypeId: google.maps.MapTypeId.SATELLITE
-        };
+    // function initMap() {
+    //     var mapOptions = {
+    //         center: {
+    //             lat: -9.719727,
+    //             lng: -50.911177
+    //         },
+    //         zoom: 3,
+    //         mapTypeId: google.maps.MapTypeId.SATELLITE
+    //     };
 
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        var markers = []; // Array para armazenar os marcadores
+    //     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    //     var markers = []; // Array para armazenar os marcadores
 
-        function addDotMarker(position, active) {
-            var marker = new google.maps.Marker({
-                position: position,
-                map: map,
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: 7,
-                    fillColor: active == "1" ? '#00FF00' : '#FF0000',
-                    fillOpacity: 1,
-                    strokeWeight: 0
-                }
-            });
-            markers.push(marker); // Adicione o marcador ao array
-        }
+    //     function addDotMarker(position, active) {
+    //         var marker = new google.maps.Marker({
+    //             position: position,
+    //             map: map,
+    //             icon: {
+    //                 path: google.maps.SymbolPath.CIRCLE,
+    //                 scale: 7,
+    //                 fillColor: active == "1" ? '#00FF00' : '#FF0000',
+    //                 fillOpacity: 1,
+    //                 strokeWeight: 0
+    //             }
+    //         });
+    //         markers.push(marker); // Adicione o marcador ao array
+    //     }
 
-        fetch('<?= base_url('map/postes') ?>')
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    for (var i = 0; i < markers.length; i++) {
-                        markers[i].setMap(null);
-                    }
+    //     fetch('<?= base_url('map/postes') ?>')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             if (data.status === 'success') {
+    //                 for (var i = 0; i < markers.length; i++) {
+    //                     markers[i].setMap(null);
+    //                 }
 
-                    data.data.forEach(poste => {
-                        addDotMarker({
-                            lat: parseFloat(poste.latitude),
-                            lng: parseFloat(poste.longitude)
-                        }, poste.active);
-                    });
+    //                 data.data.forEach(poste => {
+    //                     addDotMarker({
+    //                         lat: parseFloat(poste.latitude),
+    //                         lng: parseFloat(poste.longitude)
+    //                     }, poste.active);
+    //                 });
 
-                    var bounds = new google.maps.LatLngBounds();
-                    for (var i = 0; i < markers.length; i++) {
-                        bounds.extend(markers[i].getPosition());
-                    }
-                    map.fitBounds(bounds);
-                }
-            });
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        initMap();
-        info();
-    });
+    //                 var bounds = new google.maps.LatLngBounds();
+    //                 for (var i = 0; i < markers.length; i++) {
+    //                     bounds.extend(markers[i].getPosition());
+    //                 }
+    //                 map.fitBounds(bounds);
+    //             }
+    //         });
+    // }
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     initMap();
+    //     info();
+    // });
 
-    const info = () => {
-        const customersCard = document.querySelector('#clientes');
+    // const info = () => {
+    //     const customersCard = document.querySelector('#clientes');
         // const abertoCard = document.querySelector('#abertoQty');
         // const andamentoCard = document.querySelector('#andamentoQty');
         // const concluidosCard = document.querySelector('#concluidosQty');
         // const pendenteCard = document.querySelector('#pendenteQty');
         // const canceladosCard = document.querySelector('#canceladosQty');
 
-        fetch('<?= base_url('dashboard/info') ?>')
-            .then(response => response.json())
-            .then(data => {
-                customersCard.innerHTML = data.customerQty;
-x
-            });
-    }
+//         fetch('<?= base_url('dashboard/info') ?>')
+//             .then(response => response.json())
+//             .then(data => {
+//                 customersCard.innerHTML = data.customerQty;
+// x
+//             });
+//     }
 
 
-    const getDashboardData = async () => {
-        const response = await fetch (indow.location.href + '/getDashboardData');
-        console.log(response);
-        const data = await response.json();
+    // const getDashboardData = async () => {
+    //     const response = await fetch (indow.location.href + '/getDashboardData');
+    //     console.log(response);
+    //     const data = await response.json();
 
-        if (data.status === 'success') {
-            const {
-                clientes,
-                aberto,
-                andamento,
-                concluidos,
-                pendente,
-                cancelados
-            } = data.data;
+    //     if (data.status === 'success') {
+    //         const {
+    //             clientes,
+    //             aberto,
+    //             andamento,
+    //             concluidos,
+    //             pendente,
+    //             cancelados
+    //         } = data.data;
 
-            document.getElementById('clientes').innerText = clientes;
-            document.getElementById('aberto').innerText = abertos;
-            document.getElementById('andamento').innerText = andamento;
-            document.getElementById('concluidos').innerText = concluidos;
-            document.getElementById('pendente').innerText = pendente;
-            document.getElementById('cancelados').innerText = cancelados;
-        }
-    }
+    //         document.getElementById('clientes').innerText = clientes;
+    //         document.getElementById('aberto').innerText = abertos;
+    //         document.getElementById('andamento').innerText = andamento;
+    //         document.getElementById('concluidos').innerText = concluidos;
+    //         document.getElementById('pendente').innerText = pendente;
+    //         document.getElementById('cancelados').innerText = cancelados;
+    //     }
+    // }
 
 
     document.addEventListener('DOMContentLoaded', function() {
