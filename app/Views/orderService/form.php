@@ -70,7 +70,7 @@
                 <select class="form-control select2" id="user" name="user" <?= isset($register) ? "value='{$register->user}'" : '' ?>>
                     <option selected>Responsável</option>
                     <?php foreach ($account as $account) : ?>
-                        <option value="<?= $account['id'] ?>"><?= $account['name'] ?></option>
+                        <option value="<?= $account['name'] ?>"><?= $account['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

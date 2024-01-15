@@ -318,10 +318,10 @@ abstract class BaseController extends Controller
                     //     'title' => 'Integrações',
                     //     'href' => base_url('configuracoes/integracoes'),
                     // ],
-                    'Alterar Senha' => [
-                        'title' => 'Alterar Senha',
-                        'href' => base_url('configuracoes/alterarsenha'),
-                    ],
+                    // 'Alterar Senha' => [
+                    //     'title' => 'Alterar Senha',
+                    //     'href' => base_url('configuracoes/alterarsenha'),
+                    // ],
                 ]
             ],
             'support' => [
