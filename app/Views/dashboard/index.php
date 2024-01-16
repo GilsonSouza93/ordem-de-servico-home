@@ -325,7 +325,6 @@ x
 
         if (data.status === 'success') {
             const {
-                clientes,
                 aberto,
                 andamento,
                 concluidos,
@@ -333,8 +332,7 @@ x
                 cancelados
             } = data.data;
 
-            document.getElementById('clientes').innerText = clientes;
-            document.getElementById('aberto').innerText = abertos;
+            document.getElementById('abertos').innerText = abertos;
             document.getElementById('andamento').innerText = andamento;
             document.getElementById('concluidos').innerText = concluidos;
             document.getElementById('pendente').innerText = pendente;

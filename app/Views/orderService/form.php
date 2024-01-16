@@ -82,14 +82,13 @@
         </div>
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">Status</label>
                 <select class="form-control select2" id="status" name="status" <?= isset($register) ? "value='{$register->status}'" : '' ?>>
                     <option selected>Status</option>
-                    <option value="Aberto">Aberto</option>
-                    <option value="Andamento">Em andamento</option>
-                    <option value="Concluido">concluido</option>
-                    <option value="Pendente">Pendente</option>
-                    <option value="Cancelados">Cancelados</option>
+                    <option <?= isset($register) && $register->status == 'aberto' ? 'selected' : ''  ?> value="aberto">Aberto</option>
+                    <option <?= isset($register) && $register->status == 'andamento' ? 'selected' : ''  ?> value="andamento">Andamento</option>
+                    <option <?= isset($register) && $register->status == 'concluidos' ? 'selected' : ''  ?> value="concluidos">Concluídos</option>
+                    <option <?= isset($register) && $register->status == 'pendente ' ? 'selected' : ''  ?> value="pendente ">Pendente</option>
+                    <option <?= isset($register) && $register->status == 'cancelados ' ? 'selected' : ''  ?> value="cancelados ">Cancelados</option>
                 </select>
             </div>
             <div class="mt-3 col-md-3">

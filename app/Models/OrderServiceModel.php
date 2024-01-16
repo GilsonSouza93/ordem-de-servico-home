@@ -93,7 +93,7 @@ class OrderServiceModel extends Model
             'shop',
             'description',
         ];
-        
+
         $createAtName = 'created_at';
 
         $search = null;
@@ -118,52 +118,46 @@ class OrderServiceModel extends Model
         return $result;
     }
 
-    // public function getDashboardData()
-    // {
-    //     $session = session();
+    public function getDashboardData()
+    {
+        $session = session();
 
-    //     $companyId = $session->get('company_id');
+        $companyId = $session->get('company_id');
 
-    //     $query = $this->db->table($this->table)
-    //         ->select('status, count(status) as count')
-    //         ->where('company_id', $companyId)
-    //         ->groupBy('status')
-    //         ->get()->getResultArray();
+        $query = $this->db->table($this->table)
+            ->select('status, count(status) as count')
+            ->where('company_id', $companyId)
+            ->groupBy('status')
+            ->get()->getResultArray();
 
-    //     $data = [
-    //         'aberto' => 0,
-    //         'andamento' => 0,
-    //         'pendente' => 0,
-    //         'cancelada' => 0,
-    //         'encerrada' => 0,
-    //         'concluidos' => 0,
-    //     ];
+        $data = [
+            'abertos' => 0,
+            'andamento' => 0,
+            'concluidos' => 0,
+            'pendente' => 0,
+            'cancelados' => 0,
+        ];
 
-    //     foreach ($query as $row) {
-    //         switch ($row['status']) {
-    //             case 'aberto':
-    //                 $data['aberto'] = $row['count'];
-    //                 break;
-    //             case 'andamento':
-    //                 $data['andamento'] = $row['count'];
-    //                 break;
-    //             case 'pendente':
-    //                 $data['pendente'] = $row['count'];
-    //                 break;
-    //             case 'cancelados':
-    //                 $data['cancelados'] = $row['count'];
-    //                 break;
-    //             case 'encerrada':
-    //                 $data['encerrada'] = $row['count'];
-    //                 break;
-    //             case 'concluidos':
-    //                 $data['concluidos'] = $row['count'];
-    //                 break;    
-    //         }
-    //     }
+        foreach ($query as $row) {
+            switch ($row['status']) {
+                case 'abertos':
+                    $data['abertos'] = $row['count'];
+                    break;
+                case 'andamento':
+                    $data['andamento'] = $row['count'];
+                    break;
+                case 'concluidos':
+                    $data['concluidos'] = $row['count'];
+                    break;
+                case 'pendente':
+                    $data['pendente'] = $row['count'];
+                    break;
+                case 'cancelados':
+                    $data['cancelados'] = $row['count'];
+                    break;
+            }
+        }
 
-    //     return $data;
-    // }
-
-
+        return $data;
+    }
 }

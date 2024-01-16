@@ -6,41 +6,31 @@ use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
 {
-    public $tittle = 'Dashboard';
-    public $viewPath = 'dashboard';
+  public $tittle = 'Dashboard';
+  public $viewPath = 'dashboard';
 
-    protected $customerModel;
-    protected $orderServiceModel;
-  
+  protected $customerModel;
+  protected $orderServiceModel;
 
-    public function __construct()
-    {
-        $this->customerModel = new \App\Models\CustomerModel();
 
-        $this->orderServiceModel = new \App\Models\OrderServiceModel();
+  public function __construct()
+  {
+    $this->customerModel = new \App\Models\CustomerModel();
 
-        $this->data['customerQty'] = $this->customerModel->getCustomerQty();
+    $this->orderServiceModel = new \App\Models\OrderServiceModel();
 
-        return parent::__construct();
-    }
+    $this->data['customerQty'] = $this->customerModel->getDashboardData();
+   
+    $this->data['orderService'] = $this->orderServiceModel->getCustomerQty();
 
-    public function info()
-    {
-        $data = [
-            'clientes' => $this->customerModel->countAll(),
-            '' => $this->orderServiceModel->countAll(),
-        ];
+    return parent::__construct();
+  }
 
-        return $this->response->setJSON($data);
-    }
-
-    public function getDashboardData()
-    {
-      return $this->response->setJSON([
-        'status' => 'success',
-        'data' => $this->mainModel->getDashboardData(),
-      ]);
-    }
-    
-    
+  public function getDashboardData()
+  {
+    return $this->response->setJSON([
+      'status' => 'success',
+      'data' => $this->mainModel->getDashboardData(),
+    ]);
+  }
 }
