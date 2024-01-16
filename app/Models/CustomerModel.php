@@ -121,5 +121,12 @@ class CustomerModel extends Model
 
     return $result;
     }
+
+    public function getCustomerQty()
+    {
+       return $this->db->table('customers')->countAllResults();
+    }
+
+
     
 }

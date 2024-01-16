@@ -16,8 +16,11 @@ class DashboardController extends BaseController
     public function __construct()
     {
         $this->customerModel = new \App\Models\CustomerModel();
-        return parent::__construct();
+
         $this->orderServiceModel = new \App\Models\OrderServiceModel();
+
+        $this->data['customerQty'] = $this->customerModel->getCustomerQty();
+
         return parent::__construct();
     }
 

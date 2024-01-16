@@ -68,7 +68,7 @@
     <div class="card p-4 d-flex flex-row justify-content-between mt-3">
         <h4>
             Clientes: <span class="badge bg-danger" id="clientes">
-                0
+                <?= $customerQty ?> 
             </span>
         </h4>
 
