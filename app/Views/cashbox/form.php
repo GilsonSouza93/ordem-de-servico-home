@@ -80,7 +80,7 @@
             </div>
             <div class="mt-3 col">
                 <label for="value" class="form-label">Valor</label>
-                <input type="text" id="value" class="form-control" name="value">
+                <input type="text" id="value" class="form-control currency_auto_numeric" name="value">
             </div>
         </div>
 

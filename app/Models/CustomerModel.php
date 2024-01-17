@@ -122,7 +122,7 @@ class CustomerModel extends Model
     return $result;
     }
 
-    public function getCustomerQty()
+    public function getDashboardData()
     {
        return $this->db->table('customers')->countAllResults();
     }

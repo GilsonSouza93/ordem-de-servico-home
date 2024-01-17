@@ -10,7 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <script href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>       
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
     <style>
         :root {
             --border-radius: 16px;
@@ -532,7 +532,7 @@
                 showCancelButton: true,
                 confirmButtonText: "Apagar",
                 cancelButtonText: "Cancelar",
-                
+
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
@@ -694,22 +694,20 @@
                 minimumValue: '0',
             });
         });
-        
+
 
         document.addEventListener('DOMContentLoaded', function() {
-        const calendarEl = document.getElementById('calendar')
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+            const calendarEl = document.getElementById('calendar')
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            })
+            calendar.render()
         })
-        calendar.render()
-      })
-
-
     </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
+
 
     <?= $this->renderSection('script') ?>
 </body>
