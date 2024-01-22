@@ -475,42 +475,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
 
 
     $routes->group('gerencial', static function ($routes) {
-        $routes->group('pop', static function ($routes) {
-            $routes->get('/', 'PopController::index');
-            $routes->get('novo', 'PopController::form');
-            $routes->post('save', 'PopController::save');
-            $routes->post('search', 'PopController::search');
-            $routes->get('novo', 'PopController::filter');
-            $routes->get('editar/(:num)', 'PopController::edit/$1');
-            $routes->post('delete', 'PopController::delete');
-        });
-        $routes->group('sms', static function ($routes) {
-            $routes->get('/', 'SmsController::index');
-            $routes->get('novo', 'SmsController::form');
-            $routes->post('save', 'SmsController::save');
-            $routes->post('search', 'SmsController::search');
-            $routes->get('novo', 'SmsController::filter');
-            $routes->get('editar/(:num)', 'SmsController::edit/$1');
-            $routes->post('delete', 'SmsController::delete');
-        });
-        $routes->group('email', static function ($routes) {
-            $routes->get('/', 'EmailController::index');
-            $routes->get('novo', 'EmailController::form');
-            $routes->post('save', 'EmailController::save');
-            $routes->post('search', 'EmailController::search');
-            $routes->get('novo', 'EmailController::filter');
-            $routes->get('editar/(:num)', 'EmailController::edit/$1');
-            $routes->post('delete', 'EmailController::delete');
-        });
-        $routes->group('veiculos', static function ($routes) {
-            $routes->get('/', 'VehicleController::index');
-            $routes->get('novo', 'VehicleController::form');
-            $routes->post('save', 'VehicleController::save');
-            $routes->get('novo', 'VehicleController::filter');
-            $routes->get('editar/(:num)', 'VehicleController::edit/$1');
-            $routes->post('delete', 'VehicleController::delete');
-            $routes->post('search', 'VehicleController::search');
-        });
         $routes->group('cursos', static function ($routes) {
             $routes->get('/', 'CourseController::index');
             $routes->get('novo', 'CourseController::form');

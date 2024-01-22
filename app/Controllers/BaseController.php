@@ -84,49 +84,19 @@ abstract class BaseController extends Controller
                 'show_subitems' => false,
             ],
 
-            // 'financial' => [
-            //     'title' => 'Financeiro',
-            //     'href' => base_url('financeiro'),
-            //     'icon' => '<i class="fas fa-tools"></i>',
-            //     'show_subitems' => true,
-            //     'color' => '#3e444a',
-            //     'subitems' => [
-            //         'dashboard' => [
-            //             'title' => 'Dashboard',
-            //             'href' => base_url('financeiro/dashboard'),
-            //         ],
-            //         'caixa' => [
-            //             'title' => 'Caixa',
-            //             'href' => base_url('financeiro/caixa'),
-            //         ],
-            //         'payable' => [
-            //             'title' => 'Contas a Pagar',
-            //             'href' => base_url('financeiro/contas-pagar'),
-            //         ],
-            //         'receive' => [
-            //             'title' => 'Contas a Receber',
-            //             'href' => base_url('financeiro/contas-receber'),
-            //         ],
-            //         'ticket' => [
-            //             'title' => 'Boletos',
-            //             'href' => base_url('financeiro/boleto'),
-            //         ],
-            //         'contract' => [
-            //             'title' => 'Contratos',
-            //             'href' => base_url('financeiro/contratos'),
-            //         ],
-            //         'paymentpoint' => [
-            //             'title' => 'Ponto de Pagamento',
-            //             'href' => base_url('financeiro/pontosdepagamento'),
-            //         ],
-            //         'paymentplans' => [
-            //             'title' => 'Planos de Pagamento',
-            //             'href' => base_url('financeiro/planosdepagamento'),
-            //         ],
-
-            //     ]
-
-            // ],
+            'financial' => [
+                'title' => 'Financeiro',
+                'href' => base_url('financeiro'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#3e444a',
+                'subitems' => [
+                    'dashboard' => [
+                        'title' => 'Dashboard',
+                        'href' => base_url('financeiro/dashboard'),
+                    ],
+                ]
+            ],
 
             'gerencial' => [
                 'title' => 'Gerencial',
@@ -139,25 +109,9 @@ abstract class BaseController extends Controller
                         'title' => 'Cursos',
                         'href' => base_url('gerencial/cursos'),
                     ],
-                    // 'pop' => [
-                    //     'title' => 'POP',
-                    //     'href' => base_url('gerencial/pop'),
-                    // ],
-            //         'email' => [
-            //             'title' => 'Email',
-            //             'href' => base_url('gerencial/email'),
-            //         ],
-            //         'sms' => [
-            //             'title' => 'SMS',
-            //             'href' => base_url('gerencial/sms'),
-            //         ],
-            //         'vehicle' => [
-            //             'title' => 'Veículos',
-            //             'href' => base_url('gerencial/veiculos'),
-            //         ],
-            //     ]
+                ]
+            ],
 
-            // ],
             // 'equipment' => [
             //     'title' => 'Equipamentos',
             //     'href' => base_url('equipamentos'),
@@ -212,8 +166,8 @@ abstract class BaseController extends Controller
             //             'href' => base_url('equipamentos/servidor'),
             //             'icon' => '<i class="fas fa-server"></i>'
             //         ]
-                ]
-            ],
+            //     ]
+            // ],
 
             'Estoque' => [
                 'title' => 'Estoque',
@@ -331,10 +285,6 @@ abstract class BaseController extends Controller
                 'show_subitems' => true,
                 'color' => '#3e444a',
                 'subitems' => [
-                    // 'routerboard' => [
-                    //     'title' => 'Routerboard',
-                    //     'href' => base_url('suporte/routerboard'),
-                    // ],
                     'order_service' => [
                         'title' => 'Ordem de Serviço',
                         'href' => base_url('suporte/ordem-de-servico'),

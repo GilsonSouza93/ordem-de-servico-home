@@ -3,13 +3,11 @@
 <?= $this->section('content') ?>
 
 <div>
+
     <h2>
         <?= $tittle ?>
     </h2>
-      
 
-
-<!-- 
     <div class="row p-1 mb-4">
         <div class="col gradient-1 p-3">
             <div class="d-flex justify-content-around align-items-center h-100">
@@ -52,7 +50,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <div class="row mb-4 card-2">
         <div class="col-md-8">
@@ -65,49 +63,7 @@
         </div>
     </div>
 
-    <div class="card p-4 d-flex flex-row justify-content-between mt-3">
-        <h4>
-            Clientes: <span class="badge bg-danger" id="clientes">
-                <?= $customerQty ?> 
-            </span>
-        </h4>
-
-        <h4>
-            Abertos: <span class="badge bg-success" id="abertos">
-                0
-            </span>
-        </h4>
-
-        <h4>
-            Em andamento: <span class="badge bg-secondary" id="andamento">
-                0
-            </span>
-        </h4>
-
-        <h4>
-            Concluídos: <span class="badge bg-warning" id="concluidos">
-                0
-            </span>
-        </h4>
-
-        <h4>
-            Pendente: <span class="badge bg-info" id="pendente">
-                0
-            </span>
-        </h4>
-
-        <h4>
-            Cancelados: <span class="badge bg-info" id="cancelados">
-                0
-            </span>
-        </h4>
-        
-        <button class="btn btn-outline-light">
-            Detalhes
-        </button>
-    </div>
-
-    
+     
     <!-- <div class="row rounded m-0" id="map" style="height: 40vh">
     </div> -->
 
@@ -174,69 +130,69 @@
 
 <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
+// document.addEventListener('DOMContentLoaded', function() {
+//   var calendarEl = document.getElementById('calendar');
 
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    initialDate: '2023-11-07',
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay'
-    },
-    events: [
-      {
-        title: 'All Day Event',
-        start: '2023-11-01'
-      },
-      {
-        title: 'Long Event',
-        start: '2023-11-07',
-        end: '2023-11-10'
-      },
-      {
-        groupId: '999',
-        title: 'Repeating Event',
-        start: '2023-11-09T16:00:00'
-      },
-      {
-        groupId: '999',
-        title: 'Repeating Event',
-        start: '2023-11-16T16:00:00'
-      },
-      {
-        title: 'Conference',
-        start: '2023-11-11',
-        end: '2023-11-13'
-      },
-      {
-        title: 'Meeting',
-        start: '2023-11-12T10:30:00',
-        end: '2023-11-12T12:30:00'
-      },
-      {
-        title: 'Lunch',
-        start: '2023-11-12T12:00:00'
-      },
-      {
-        title: 'Meeting',
-        start: '2023-11-12T14:30:00'
-      },
-      {
-        title: 'Birthday Party',
-        start: '2023-11-13T07:00:00'
-      },
-      {
-        title: 'Click for Google',
-        url: 'https://google.com/',
-        start: '2023-11-28'
-      }
-    ]
-  });
+//   var calendar = new FullCalendar.Calendar(calendarEl, {
+//     initialView: 'dayGridMonth',
+//     initialDate: '2023-11-07',
+//     headerToolbar: {
+//       left: 'prev,next today',
+//       center: 'title',
+//       right: 'dayGridMonth,timeGridWeek,timeGridDay'
+//     },
+//     events: [
+//       {
+//         title: 'All Day Event',
+//         start: '2023-11-01'
+//       },
+//       {
+//         title: 'Long Event',
+//         start: '2023-11-07',
+//         end: '2023-11-10'
+//       },
+//       {
+//         groupId: '999',
+//         title: 'Repeating Event',
+//         start: '2023-11-09T16:00:00'
+//       },
+//       {
+//         groupId: '999',
+//         title: 'Repeating Event',
+//         start: '2023-11-16T16:00:00'
+//       },
+//       {
+//         title: 'Conference',
+//         start: '2023-11-11',
+//         end: '2023-11-13'
+//       },
+//       {
+//         title: 'Meeting',
+//         start: '2023-11-12T10:30:00',
+//         end: '2023-11-12T12:30:00'
+//       },
+//       {
+//         title: 'Lunch',
+//         start: '2023-11-12T12:00:00'
+//       },
+//       {
+//         title: 'Meeting',
+//         start: '2023-11-12T14:30:00'
+//       },
+//       {
+//         title: 'Birthday Party',
+//         start: '2023-11-13T07:00:00'
+//       },
+//       {
+//         title: 'Click for Google',
+//         url: 'https://google.com/',
+//         start: '2023-11-28'
+//       }
+//     ]
+//   });
 
-  calendar.render();
-});
+//   calendar.render();
+// });
     const openModalFilterPost = () => {
         const modalFilter = new bootstrap.Modal('#modalFilterPost', {
             keyboard: true,
@@ -301,53 +257,22 @@ document.addEventListener('DOMContentLoaded', function() {
         info();
     });
 
-    const info = () => {
-        const customersCard = document.querySelector('#clientes');
-        // const abertoCard = document.querySelector('#abertoQty');
-        // const andamentoCard = document.querySelector('#andamentoQty');
-        // const concluidosCard = document.querySelector('#concluidosQty');
-        // const pendenteCard = document.querySelector('#pendenteQty');
-        // const canceladosCard = document.querySelector('#canceladosQty');
+//     const info = () => {
+//         const customersCard = document.querySelector('#clientes');
+//         // const abertoCard = document.querySelector('#abertoQty');
+//         // const andamentoCard = document.querySelector('#andamentoQty');
+//         // const concluidosCard = document.querySelector('#concluidosQty');
+//         // const pendenteCard = document.querySelector('#pendenteQty');
+//         // const canceladosCard = document.querySelector('#canceladosQty');
 
-        fetch('<?= base_url('dashboard/info') ?>')
-            .then(response => response.json())
-            .then(data => {
-                customersCard.innerHTML = data.customerQty;
-x
-            });
-    }
-
-
-    const getDashboardData = async () => {
-        const response = await fetch (indow.location.href + '/getDashboardData');
-        console.log(response);
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            const {
-                aberto,
-                andamento,
-                concluidos,
-                pendente,
-                cancelados
-            } = data.data;
-
-            document.getElementById('abertos').innerText = abertos;
-            document.getElementById('andamento').innerText = andamento;
-            document.getElementById('concluidos').innerText = concluidos;
-            document.getElementById('pendente').innerText = pendente;
-            document.getElementById('cancelados').innerText = cancelados;
-        }
-    }
-
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var calendarEl = document.getElementById('calendar');
-    //     var calendar = new FullCalendar.Calendar(calendarEl, {
-    //       initialView: 'resourceTimelineWeek'
-    //     });
-    //     calendar.render();
-    //   });
+//         fetch('<?= base_url('dashboard/info') ?>')
+//             .then(response => response.json())
+//             .then(data => {
+//                 customersCard.innerHTML = data.customerQty;
+// x
+//             });
+//     }
+    
 </script>
 
 

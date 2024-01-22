@@ -22,6 +22,8 @@ class OrderServiceController extends BaseController
         $this->CustomerModel = model('CustomerModel');
 
         $this->data['costumer'] = $this->CustomerModel->findAll();
+
+        $this->data['customerQty'] = $this->CustomerModel->getDashboardData();
         
         $this->AccountModel = model('AccountModel');
 
@@ -43,6 +45,14 @@ class OrderServiceController extends BaseController
       $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;
+    }
+
+    public function getDashboardData()
+    {
+      return $this->response->setJSON([
+        'status' => 'success',
+        'data' => $this->mainModel->getDashboardData(),
+      ]);
     }
 
 }
